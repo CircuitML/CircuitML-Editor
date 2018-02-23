@@ -1,0 +1,1294 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+  <xs:element name="cml">
+    <xs:complexType mixed="false">
+      <xs:choice maxOccurs="unbounded">
+        <xs:element name="c">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="pins">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="cathode">
+                      <xs:complexType>
+                        <xs:complexContent>
+                          <xs:restriction base="xs:anyType">
+                            <xs:attributeGroup ref="Pin"/>
+                          </xs:restriction>
+                        </xs:complexContent>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="anode">
+                      <xs:complexType>
+                        <xs:complexContent>
+                          <xs:restriction base="xs:anyType">
+                            <xs:attributeGroup ref="Pin"/>
+                          </xs:restriction>
+                        </xs:complexContent>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="capacitance" minOccurs="0">
+                <xs:complexType>
+                  <xs:complexContent>
+                    <xs:restriction base="xs:anyType">
+                      <xs:attributeGroup ref="GeneralElmentAttGrp"/>
+                      <xs:attribute name="unit" type="CapacitanceUnit" use="required"/>
+                    </xs:restriction>
+                  </xs:complexContent>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="ic" minOccurs="0">
+                <xs:complexType>
+                  <xs:complexContent>
+                    <xs:restriction base="xs:anyType">
+                      <xs:attributeGroup ref="GeneralElmentAttGrp"/>
+                      <xs:attribute name="unit" type="CurrentUnit" use="required"/>
+                    </xs:restriction>
+                  </xs:complexContent>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="g" minOccurs="0">
+                <xs:complexType>
+                  <xs:complexContent>
+                    <xs:restriction base="xs:anyType">
+                      <xs:attributeGroup ref="GeneralElmentAttGrp"/>
+                      <xs:attribute name="unit" type="ConductanceUnit" use="required"/>
+                    </xs:restriction>
+                  </xs:complexContent>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="vc" minOccurs="0">
+                <xs:complexType>
+                  <xs:complexContent>
+                    <xs:restriction base="xs:anyType">
+                      <xs:attributeGroup ref="GeneralElmentAttGrp"/>
+                      <xs:attribute name="unit" type="VUnit" use="required"/>
+                    </xs:restriction>
+                  </xs:complexContent>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="z" minOccurs="0">
+                <xs:complexType>
+                  <xs:complexContent>
+                    <xs:restriction base="xs:anyType">
+                      <xs:attributeGroup ref="GeneralElmentAttGrp"/>
+                      <xs:attribute name="unit" type="ImpedanceUnit" use="required"/>
+                    </xs:restriction>
+                  </xs:complexContent>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:attribute name="name" type="xs:string" use="required"/>
+            <xs:attribute name="type" type="CType" use="required"/>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="l">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="node" minOccurs="2" maxOccurs="2">
+                <xs:complexType>
+                  <xs:complexContent>
+                    <xs:restriction base="xs:anyType">
+                      <xs:attributeGroup ref="Pin"/>
+                    </xs:restriction>
+                  </xs:complexContent>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="il" minOccurs="0">
+                <xs:complexType>
+                  <xs:complexContent>
+                    <xs:restriction base="xs:anyType">
+                      <xs:attributeGroup ref="GeneralElmentAttGrp"/>
+                      <xs:attribute name="unit" type="CurrentUnit" use="required"/>
+                    </xs:restriction>
+                  </xs:complexContent>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="inductance" minOccurs="0">
+                <xs:complexType>
+                  <xs:complexContent>
+                    <xs:restriction base="xs:anyType">
+                      <xs:attributeGroup ref="GeneralElmentAttGrp"/>
+                      <xs:attribute name="unit" type="InductanceUnit" use="required"/>
+                    </xs:restriction>
+                  </xs:complexContent>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="r" minOccurs="0">
+                <xs:complexType>
+                  <xs:complexContent>
+                    <xs:restriction base="xs:anyType">
+                      <xs:attributeGroup ref="GeneralElmentAttGrp"/>
+                      <xs:attribute name="unit" type="RUnit" use="required"/>
+                    </xs:restriction>
+                  </xs:complexContent>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="vl" minOccurs="0">
+                <xs:complexType>
+                  <xs:complexContent>
+                    <xs:restriction base="xs:anyType">
+                      <xs:attributeGroup ref="GeneralElmentAttGrp"/>
+                      <xs:attribute name="unit" type="VUnit" use="required"/>
+                    </xs:restriction>
+                  </xs:complexContent>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="z" minOccurs="0">
+                <xs:complexType>
+                  <xs:complexContent>
+                    <xs:restriction base="xs:anyType">
+                      <xs:attributeGroup ref="GeneralElmentAttGrp"/>
+                      <xs:attribute name="unit" type="ImpedanceUnit" use="required"/>
+                    </xs:restriction>
+                  </xs:complexContent>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:attribute name="name" type="xs:string" use="required"/>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="r">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="node" minOccurs="2" maxOccurs="2">
+                <xs:complexType>
+                  <xs:complexContent>
+                    <xs:restriction base="xs:anyType">
+                      <xs:attributeGroup ref="Pin"/>
+                    </xs:restriction>
+                  </xs:complexContent>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="ir" minOccurs="0">
+                <xs:complexType>
+                  <xs:complexContent>
+                    <xs:restriction base="xs:anyType">
+                      <xs:attributeGroup ref="GeneralElmentAttGrp"/>
+                      <xs:attribute name="unit" type="CurrentUnit" use="required"/>
+                    </xs:restriction>
+                  </xs:complexContent>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="vr" minOccurs="0">
+                <xs:complexType>
+                  <xs:complexContent>
+                    <xs:restriction base="xs:anyType">
+                      <xs:attributeGroup ref="GeneralElmentAttGrp"/>
+                      <xs:attribute name="unit" type="VUnit" use="required"/>
+                    </xs:restriction>
+                  </xs:complexContent>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:attributeGroup ref="GeneralElmentAttGrp"/>
+            <xs:attribute name="type" type="RType" use="required"/>
+            <xs:attribute name="unit" type="RUnit" use="optional"/>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="vdc">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="positive">
+                <xs:complexType>
+                  <xs:complexContent>
+                    <xs:restriction base="xs:anyType">
+                      <xs:attributeGroup ref="Pin"/>
+                    </xs:restriction>
+                  </xs:complexContent>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="negative">
+                <xs:complexType>
+                  <xs:complexContent>
+                    <xs:restriction base="xs:anyType">
+                      <xs:attributeGroup ref="Pin"/>
+                    </xs:restriction>
+                  </xs:complexContent>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:attributeGroup ref="GeneralElmentAttGrp"/>
+            <xs:attribute name="unit" type="VUnit" use="required"/>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="idc">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="positive">
+                <xs:complexType>
+                  <xs:complexContent>
+                    <xs:restriction base="xs:anyType">
+                      <xs:attributeGroup ref="Pin"/>
+                    </xs:restriction>
+                  </xs:complexContent>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="negative">
+                <xs:complexType>
+                  <xs:complexContent>
+                    <xs:restriction base="xs:anyType">
+                      <xs:attributeGroup ref="Pin"/>
+                    </xs:restriction>
+                  </xs:complexContent>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:attributeGroup ref="GeneralElmentAttGrp"/>
+            <xs:attribute name="unit" type="CurrentUnit" use="required"/>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="led">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="positive">
+                <xs:complexType>
+                  <xs:complexContent>
+                    <xs:restriction base="xs:anyType">
+                      <xs:attributeGroup ref="Pin"/>
+                    </xs:restriction>
+                  </xs:complexContent>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="negative">
+                <xs:complexType>
+                  <xs:complexContent>
+                    <xs:restriction base="xs:anyType">
+                      <xs:attributeGroup ref="Pin"/>
+                    </xs:restriction>
+                  </xs:complexContent>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="i" minOccurs="0">
+                <xs:complexType>
+                  <xs:complexContent>
+                    <xs:restriction base="xs:anyType">
+                      <xs:attributeGroup ref="GeneralElmentAttGrp"/>
+                      <xs:attribute name="unit" type="CurrentUnit" use="required"/>
+                    </xs:restriction>
+                  </xs:complexContent>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="v" minOccurs="0">
+                <xs:complexType>
+                  <xs:complexContent>
+                    <xs:restriction base="xs:anyType">
+                      <xs:attributeGroup ref="GeneralElmentAttGrp"/>
+                      <xs:attribute name="unit" type="VUnit" use="required"/>
+                    </xs:restriction>
+                  </xs:complexContent>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:attribute name="name" type="xs:string" use="required"/>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="connector">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="node" minOccurs="2" maxOccurs="2">
+                <xs:complexType>
+                  <xs:complexContent>
+                    <xs:restriction base="xs:anyType">
+                      <xs:attributeGroup ref="Pin"/>
+                    </xs:restriction>
+                  </xs:complexContent>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:attribute name="name" type="xs:string" use="required"/>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="and">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="inputs">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="pin" minOccurs="2" maxOccurs="4">
+                      <xs:complexType>
+                        <xs:complexContent>
+                          <xs:restriction base="xs:anyType">
+                            <xs:attributeGroup ref="Pin"/>
+                            <xs:attribute name="value" type="Binary" use="optional"/>
+                          </xs:restriction>
+                        </xs:complexContent>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="output">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="pin">
+                      <xs:complexType>
+                        <xs:complexContent>
+                          <xs:restriction base="xs:anyType">
+                            <xs:attributeGroup ref="Pin"/>
+                            <xs:attribute name="value" type="Binary" use="optional"/>
+                          </xs:restriction>
+                        </xs:complexContent>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:attribute name="name" type="xs:string" use="required"/>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="or">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="inputs">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="pin" minOccurs="2" maxOccurs="4">
+                      <xs:complexType>
+                        <xs:complexContent>
+                          <xs:restriction base="xs:anyType">
+                            <xs:attributeGroup ref="Pin"/>
+                            <xs:attribute name="value" type="Binary" use="optional"/>
+                          </xs:restriction>
+                        </xs:complexContent>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="output">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="pin" maxOccurs="2">
+                      <xs:complexType>
+                        <xs:complexContent>
+                          <xs:restriction base="xs:anyType">
+                            <xs:attributeGroup ref="Pin"/>
+                            <xs:attribute name="value" type="Binary" use="optional"/>
+                          </xs:restriction>
+                        </xs:complexContent>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:attribute name="name" type="xs:string" use="required"/>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="nand">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="inputs">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="pin" minOccurs="2" maxOccurs="4">
+                      <xs:complexType>
+                        <xs:complexContent>
+                          <xs:restriction base="xs:anyType">
+                            <xs:attributeGroup ref="Pin"/>
+                            <xs:attribute name="value" type="Binary" use="optional"/>
+                          </xs:restriction>
+                        </xs:complexContent>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="output">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="pin" maxOccurs="2">
+                      <xs:complexType>
+                        <xs:complexContent>
+                          <xs:restriction base="xs:anyType">
+                            <xs:attributeGroup ref="Pin"/>
+                            <xs:attribute name="value" type="Binary" use="optional"/>
+                          </xs:restriction>
+                        </xs:complexContent>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:attribute name="name" type="xs:string" use="required"/>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="nor">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="inputs">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="pin" minOccurs="2" maxOccurs="4">
+                      <xs:complexType>
+                        <xs:complexContent>
+                          <xs:restriction base="xs:anyType">
+                            <xs:attributeGroup ref="Pin"/>
+                            <xs:attribute name="value" type="Binary" use="optional"/>
+                          </xs:restriction>
+                        </xs:complexContent>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="output">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="pin" maxOccurs="2">
+                      <xs:complexType>
+                        <xs:complexContent>
+                          <xs:restriction base="xs:anyType">
+                            <xs:attributeGroup ref="Pin"/>
+                            <xs:attribute name="value" type="Binary" use="optional"/>
+                          </xs:restriction>
+                        </xs:complexContent>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:attribute name="name" type="xs:string" use="required"/>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="xor">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="inputs">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="pin" minOccurs="2" maxOccurs="4">
+                      <xs:complexType>
+                        <xs:complexContent>
+                          <xs:restriction base="xs:anyType">
+                            <xs:attributeGroup ref="Pin"/>
+                            <xs:attribute name="value" type="Binary" use="optional"/>
+                          </xs:restriction>
+                        </xs:complexContent>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="output">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="pin">
+                      <xs:complexType>
+                        <xs:complexContent>
+                          <xs:restriction base="xs:anyType">
+                            <xs:attributeGroup ref="Pin"/>
+                            <xs:attribute name="value" type="Binary" use="optional"/>
+                          </xs:restriction>
+                        </xs:complexContent>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:attribute name="name" type="xs:string" use="required"/>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="xnor">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="inputs">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="pin" minOccurs="2" maxOccurs="4">
+                      <xs:complexType>
+                        <xs:complexContent>
+                          <xs:restriction base="xs:anyType">
+                            <xs:attributeGroup ref="Pin"/>
+                            <xs:attribute name="value" type="Binary" use="optional"/>
+                          </xs:restriction>
+                        </xs:complexContent>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="output">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="pin" maxOccurs="2">
+                      <xs:complexType>
+                        <xs:complexContent>
+                          <xs:restriction base="xs:anyType">
+                            <xs:attributeGroup ref="Pin"/>
+                            <xs:attribute name="value" type="Binary" use="optional"/>
+                          </xs:restriction>
+                        </xs:complexContent>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:attribute name="name" type="xs:string" use="required"/>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="not">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="inputs">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="pin">
+                      <xs:complexType>
+                        <xs:complexContent>
+                          <xs:restriction base="xs:anyType">
+                            <xs:attributeGroup ref="Pin"/>
+                            <xs:attribute name="value" type="Binary" use="optional"/>
+                          </xs:restriction>
+                        </xs:complexContent>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="output">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="pin">
+                      <xs:complexType>
+                        <xs:complexContent>
+                          <xs:restriction base="xs:anyType">
+                            <xs:attributeGroup ref="Pin"/>
+                            <xs:attribute name="value" type="Binary" use="optional"/>
+                          </xs:restriction>
+                        </xs:complexContent>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:attribute name="name" type="xs:string" use="required"/>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="diode">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="anode">
+                <xs:complexType>
+                  <xs:complexContent>
+                    <xs:restriction base="xs:anyType">
+                      <xs:attributeGroup ref="Pin"/>
+                    </xs:restriction>
+                  </xs:complexContent>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="cathode">
+                <xs:complexType>
+                  <xs:complexContent>
+                    <xs:restriction base="xs:anyType">
+                      <xs:attributeGroup ref="Pin"/>
+                    </xs:restriction>
+                  </xs:complexContent>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="id" minOccurs="0">
+                <xs:complexType>
+                  <xs:complexContent>
+                    <xs:restriction base="xs:anyType">
+                      <xs:attributeGroup ref="GeneralElmentAttGrp"/>
+                      <xs:attribute name="unit" type="CurrentUnit" use="required"/>
+                    </xs:restriction>
+                  </xs:complexContent>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="is" minOccurs="0">
+                <xs:complexType>
+                  <xs:complexContent>
+                    <xs:restriction base="xs:anyType">
+                      <xs:attributeGroup ref="GeneralElmentAttGrp"/>
+                      <xs:attribute name="unit" type="CurrentUnit" use="required"/>
+                    </xs:restriction>
+                  </xs:complexContent>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="vd" minOccurs="0">
+                <xs:complexType>
+                  <xs:complexContent>
+                    <xs:restriction base="xs:anyType">
+                      <xs:attributeGroup ref="GeneralElmentAttGrp"/>
+                      <xs:attribute name="unit" type="VUnit" use="required"/>
+                    </xs:restriction>
+                  </xs:complexContent>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="vt" minOccurs="0">
+                <xs:complexType>
+                  <xs:complexContent>
+                    <xs:restriction base="xs:anyType">
+                      <xs:attributeGroup ref="GeneralElmentAttGrp"/>
+                      <xs:attribute name="unit" type="VUnit" use="required"/>
+                    </xs:restriction>
+                  </xs:complexContent>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:attribute name="name" type="xs:string" use="required"/>
+            <xs:attribute name="type" type="DoideType" use="required"/>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="switch">
+          <xs:complexType>
+            <xs:choice>
+              <xs:element name="bushbutton" minOccurs="0">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="point" minOccurs="2" maxOccurs="2">
+                      <xs:complexType>
+                        <xs:complexContent>
+                          <xs:restriction base="xs:anyType">
+                            <xs:attributeGroup ref="Pin"/>
+                          </xs:restriction>
+                        </xs:complexContent>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                  <xs:attribute name="name" type="xs:string" use="required"/>
+                  <xs:attribute name="type" type="BushBtnType" use="required"/>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="toggleswitch" minOccurs="0">
+                <xs:complexType>
+                  <xs:choice>
+                    <xs:element name="spst" minOccurs="0">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="points">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="pole">
+                                  <xs:complexType>
+                                    <xs:complexContent>
+                                      <xs:restriction base="xs:anyType">
+                                        <xs:attributeGroup ref="Pin"/>
+                                      </xs:restriction>
+                                    </xs:complexContent>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="throw">
+                                  <xs:complexType>
+                                    <xs:complexContent>
+                                      <xs:restriction base="xs:anyType">
+                                        <xs:attributeGroup ref="Pin"/>
+                                        <xs:attribute name="state" type="Status" use="required"/>
+                                      </xs:restriction>
+                                    </xs:complexContent>
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                        <xs:attribute name="name" type="xs:string" use="required"/>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="spdt" minOccurs="0">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="points">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="pole">
+                                  <xs:complexType>
+                                    <xs:complexContent>
+                                      <xs:restriction base="xs:anyType">
+                                        <xs:attributeGroup ref="Pin"/>
+                                      </xs:restriction>
+                                    </xs:complexContent>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="throw" minOccurs="2" maxOccurs="2">
+                                  <xs:complexType>
+                                    <xs:complexContent>
+                                      <xs:restriction base="xs:anyType">
+                                        <xs:attributeGroup ref="Pin"/>
+                                        <xs:attribute name="state" type="Status" use="required"/>
+                                      </xs:restriction>
+                                    </xs:complexContent>
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                        <xs:attribute name="name" type="xs:string" use="required"/>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="dpst">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="points">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="pole" minOccurs="2" maxOccurs="2">
+                                  <xs:complexType>
+                                    <xs:complexContent>
+                                      <xs:restriction base="xs:anyType">
+                                        <xs:attributeGroup ref="Pin"/>
+                                      </xs:restriction>
+                                    </xs:complexContent>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="throw">
+                                  <xs:complexType>
+                                    <xs:complexContent>
+                                      <xs:restriction base="xs:anyType">
+                                        <xs:attributeGroup ref="Pin"/>
+                                        <xs:attribute name="state" type="Status" use="required"/>
+                                      </xs:restriction>
+                                    </xs:complexContent>
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                        <xs:attribute name="name" type="xs:string" use="required"/>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="dpdt">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="points">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="pole" minOccurs="2" maxOccurs="2">
+                                  <xs:complexType>
+                                    <xs:complexContent>
+                                      <xs:restriction base="xs:anyType">
+                                        <xs:attributeGroup ref="Pin"/>
+                                      </xs:restriction>
+                                    </xs:complexContent>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="throw" minOccurs="2" maxOccurs="2">
+                                  <xs:complexType>
+                                    <xs:complexContent>
+                                      <xs:restriction base="xs:anyType">
+                                        <xs:attributeGroup ref="Pin"/>
+                                        <xs:attribute name="state" type="Status" use="required"/>
+                                      </xs:restriction>
+                                    </xs:complexContent>
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                        <xs:attribute name="name" type="xs:string" use="required"/>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="twopsixt">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="points">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="pole" minOccurs="2" maxOccurs="2">
+                                  <xs:complexType>
+                                    <xs:complexContent>
+                                      <xs:restriction base="xs:anyType">
+                                        <xs:attributeGroup ref="Pin"/>
+                                      </xs:restriction>
+                                    </xs:complexContent>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="throw" minOccurs="6" maxOccurs="6">
+                                  <xs:complexType>
+                                    <xs:complexContent>
+                                      <xs:restriction base="xs:anyType">
+                                        <xs:attributeGroup ref="Pin"/>
+                                        <xs:attribute name="state" type="Status" use="required"/>
+                                      </xs:restriction>
+                                    </xs:complexContent>
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                        <xs:attribute name="name" type="xs:string" use="required"/>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:choice>
+                </xs:complexType>
+              </xs:element>
+            </xs:choice>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="ohmmeter">
+          <xs:complexType>
+            <xs:complexContent>
+              <xs:restriction base="xs:anyType">
+                <xs:sequence>
+                  <xs:element name="point" minOccurs="2" maxOccurs="2">
+                    <xs:complexType>
+                      <xs:complexContent>
+                        <xs:restriction base="xs:anyType">
+                          <xs:attributeGroup ref="Pin"/>
+                        </xs:restriction>
+                      </xs:complexContent>
+                    </xs:complexType>
+                  </xs:element>
+                </xs:sequence>
+                <xs:attribute name="name" type="xs:string" use="required"/>
+                <xs:attribute name="value" type="xs:float" use="optional"/>
+              </xs:restriction>
+            </xs:complexContent>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="voltameter">
+          <xs:complexType>
+            <xs:complexContent>
+              <xs:restriction base="xs:anyType">
+                <xs:sequence>
+                  <xs:element name="point" minOccurs="2" maxOccurs="2">
+                    <xs:complexType>
+                      <xs:complexContent>
+                        <xs:restriction base="xs:anyType">
+                          <xs:attributeGroup ref="Pin"/>
+                        </xs:restriction>
+                      </xs:complexContent>
+                    </xs:complexType>
+                  </xs:element>
+                </xs:sequence>
+                <xs:attribute name="name" type="xs:string" use="required"/>
+                <xs:attribute name="value" type="xs:float" use="optional"/>
+              </xs:restriction>
+            </xs:complexContent>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="powermeter">
+          <xs:complexType>
+            <xs:complexContent>
+              <xs:restriction base="xs:anyType">
+                <xs:sequence>
+                  <xs:element name="point" minOccurs="2" maxOccurs="2">
+                    <xs:complexType>
+                      <xs:complexContent>
+                        <xs:restriction base="xs:anyType">
+                          <xs:attributeGroup ref="Pin"/>
+                        </xs:restriction>
+                      </xs:complexContent>
+                    </xs:complexType>
+                  </xs:element>
+                </xs:sequence>
+                <xs:attribute name="name" type="xs:string" use="required"/>
+                <xs:attribute name="value" type="xs:float" use="optional"/>
+              </xs:restriction>
+            </xs:complexContent>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="vac">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="point" minOccurs="2" maxOccurs="2">
+                <xs:complexType>
+                  <xs:complexContent>
+                    <xs:restriction base="xs:anyType">
+                      <xs:attributeGroup ref="Pin"/>
+                    </xs:restriction>
+                  </xs:complexContent>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="energy">
+                <xs:complexType>
+                  <xs:complexContent>
+                    <xs:restriction base="xs:anyType">
+                      <xs:attributeGroup ref="GeneralElmentAttGrp"/>
+                      <xs:attribute name="unit" type="EnergyUnit" use="required"/>
+                    </xs:restriction>
+                  </xs:complexContent>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="frequency">
+                <xs:complexType>
+                  <xs:complexContent>
+                    <xs:restriction base="xs:anyType">
+                      <xs:attributeGroup ref="GeneralElmentAttGrp"/>
+                      <xs:attribute name="unit" type="FrequencyUnit" use="required"/>
+                    </xs:restriction>
+                  </xs:complexContent>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="vpeak">
+                <xs:complexType>
+                  <xs:complexContent>
+                    <xs:restriction base="xs:anyType">
+                      <xs:attributeGroup ref="GeneralElmentAttGrp"/>
+                      <xs:attribute name="unit" type="VUnit" use="required"/>
+                    </xs:restriction>
+                  </xs:complexContent>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:attribute name="name" type="xs:string" use="required"/>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="iac">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="point" minOccurs="2" maxOccurs="2">
+                <xs:complexType>
+                  <xs:complexContent>
+                    <xs:restriction base="xs:anyType">
+                      <xs:attributeGroup ref="Pin"/>
+                    </xs:restriction>
+                  </xs:complexContent>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="energy">
+                <xs:complexType>
+                  <xs:complexContent>
+                    <xs:restriction base="xs:anyType">
+                      <xs:attributeGroup ref="GeneralElmentAttGrp"/>
+                      <xs:attribute name="unit" type="EnergyUnit" use="required"/>
+                    </xs:restriction>
+                  </xs:complexContent>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="frequency">
+                <xs:complexType>
+                  <xs:complexContent>
+                    <xs:restriction base="xs:anyType">
+                      <xs:attributeGroup ref="GeneralElmentAttGrp"/>
+                      <xs:attribute name="unit" type="FrequencyUnit" use="required"/>
+                    </xs:restriction>
+                  </xs:complexContent>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="ipeak">
+                <xs:complexType>
+                  <xs:complexContent>
+                    <xs:restriction base="xs:anyType">
+                      <xs:attributeGroup ref="GeneralElmentAttGrp"/>
+                      <xs:attribute name="unit" type="CurrentUnit" use="required"/>
+                    </xs:restriction>
+                  </xs:complexContent>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:attribute name="name" type="xs:string" use="required"/>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="transistor">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="points">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="emitter">
+                      <xs:complexType>
+                        <xs:complexContent>
+                          <xs:restriction base="xs:anyType">
+                            <xs:attributeGroup ref="Pin"/>
+                          </xs:restriction>
+                        </xs:complexContent>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="tbase">
+                      <xs:complexType>
+                        <xs:complexContent>
+                          <xs:restriction base="xs:anyType">
+                            <xs:attributeGroup ref="Pin"/>
+                          </xs:restriction>
+                        </xs:complexContent>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="committer">
+                      <xs:complexType>
+                        <xs:complexContent>
+                          <xs:restriction base="xs:anyType">
+                            <xs:attributeGroup ref="Pin"/>
+                          </xs:restriction>
+                        </xs:complexContent>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="volts">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="vbe" minOccurs="0">
+                      <xs:complexType>
+                        <xs:complexContent>
+                          <xs:restriction base="xs:anyType">
+                            <xs:attributeGroup ref="GeneralElmentAttGrp"/>
+                            <xs:attribute name="unit" type="VUnit" use="required"/>
+                          </xs:restriction>
+                        </xs:complexContent>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="vce" minOccurs="0">
+                      <xs:complexType>
+                        <xs:complexContent>
+                          <xs:restriction base="xs:anyType">
+                            <xs:attributeGroup ref="GeneralElmentAttGrp"/>
+                            <xs:attribute name="unit" type="VUnit" use="required"/>
+                          </xs:restriction>
+                        </xs:complexContent>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="vbc" minOccurs="0">
+                      <xs:complexType>
+                        <xs:complexContent>
+                          <xs:restriction base="xs:anyType">
+                            <xs:attributeGroup ref="GeneralElmentAttGrp"/>
+                            <xs:attribute name="unit" type="VUnit" use="required"/>
+                          </xs:restriction>
+                        </xs:complexContent>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="vcc" minOccurs="0">
+                      <xs:complexType>
+                        <xs:complexContent>
+                          <xs:restriction base="xs:anyType">
+                            <xs:attributeGroup ref="GeneralElmentAttGrp"/>
+                            <xs:attribute name="unit" type="VUnit" use="required"/>
+                          </xs:restriction>
+                        </xs:complexContent>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="vin" minOccurs="0">
+                      <xs:complexType>
+                        <xs:complexContent>
+                          <xs:restriction base="xs:anyType">
+                            <xs:attributeGroup ref="GeneralElmentAttGrp"/>
+                            <xs:attribute name="unit" type="VUnit" use="required"/>
+                          </xs:restriction>
+                        </xs:complexContent>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="currents">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="ib" minOccurs="0">
+                      <xs:complexType>
+                        <xs:complexContent>
+                          <xs:restriction base="xs:anyType">
+                            <xs:attributeGroup ref="GeneralElmentAttGrp"/>
+                            <xs:attribute name="unit" type="CurrentUnit" use="required"/>
+                          </xs:restriction>
+                        </xs:complexContent>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="ic" minOccurs="0">
+                      <xs:complexType>
+                        <xs:complexContent>
+                          <xs:restriction base="xs:anyType">
+                            <xs:attributeGroup ref="GeneralElmentAttGrp"/>
+                            <xs:attribute name="unit" type="CurrentUnit" use="required"/>
+                          </xs:restriction>
+                        </xs:complexContent>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="ie" minOccurs="0">
+                      <xs:complexType>
+                        <xs:complexContent>
+                          <xs:restriction base="xs:anyType">
+                            <xs:attributeGroup ref="GeneralElmentAttGrp"/>
+                            <xs:attribute name="unit" type="CurrentUnit" use="required"/>
+                          </xs:restriction>
+                        </xs:complexContent>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="alpha">
+                <xs:complexType>
+                  <xs:complexContent>
+                    <xs:restriction base="xs:anyType">
+                      <xs:attributeGroup ref="GeneralElmentAttGrp"/>
+                    </xs:restriction>
+                  </xs:complexContent>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="beta">
+                <xs:complexType>
+                  <xs:complexContent>
+                    <xs:restriction base="xs:anyType">
+                      <xs:attributeGroup ref="GeneralElmentAttGrp"/>
+                    </xs:restriction>
+                  </xs:complexContent>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:attribute name="name" type="xs:string" use="required"/>
+            <xs:attribute name="type" type="TransistorType" use="required"/>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="calculate">
+          <xs:complexType>
+            <xs:attribute name="type" type="Calc"/>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+      <xs:attribute name="id" type="xs:string" use="required"/>
+      <xs:attribute name="width" type="xs:float" use="required"/>
+      <xs:attribute name="height" type="xs:float" use="required"/>
+      <xs:attribute name="scale" type="xs:float" use="required"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:simpleType name="RType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Constant"/>
+      <xs:enumeration value="Variable"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="Calc">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Req"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="TransistorType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="PNP"/>
+      <xs:enumeration value="NPN"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="BushBtnType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="NO"/>
+      <xs:enumeration value="NC"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="Binary">
+    <xs:restriction base="xs:int">
+      <xs:enumeration value="0"/>
+      <xs:enumeration value="1"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="DType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Pin"/>
+      <xs:enumeration value="Zener"/>
+      <xs:enumeration value="Schotty"/>
+      <xs:enumeration value="Photo"/>
+      <xs:enumeration value="Tunned"/>
+      <xs:enumeration value="Varactor"/>
+      <xs:enumeration value="ConstCurrent"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="CType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Chemical"/>
+      <xs:enumeration value="VariableChemical"/>
+      <xs:enumeration value="Bipolar"/>
+      <xs:enumeration value="VariableBipolar"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="Status">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="On"/>
+      <xs:enumeration value="Off"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:attributeGroup name="Pin">
+    <xs:attribute name="row" type="xs:integer" use="required"/>
+    <xs:attribute name="col" type="xs:integer" use="required"/>
+    <xs:attribute name="id" type="xs:integer" use="prohibited"/>
+  </xs:attributeGroup>
+  <xs:attributeGroup name="GeneralElmentAttGrp">
+    <xs:attribute name="name" type="xs:string" use="required"/>
+    <xs:attribute name="value" type="xs:float" use="optional"/>
+    <xs:attribute name="prefix" type="Prefix" use="optional"/>
+  </xs:attributeGroup>
+  <xs:simpleType name="Prefix">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="None"/>
+      <xs:enumeration value="Kilo"/>
+      <xs:enumeration value="Mega"/>
+      <xs:enumeration value="Giga"/>
+      <xs:enumeration value="Terra"/>
+      <xs:enumeration value="Centi"/>
+      <xs:enumeration value="Milli"/>
+      <xs:enumeration value="Micro"/>
+      <xs:enumeration value="Nano"/>
+      <xs:enumeration value="Pico"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="ChargeUnit">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Coulomb"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="RUnit">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Ohm"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="ImpedanceUnit">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Ohm(Impedance)"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="VUnit">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Volt"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="CurrentUnit">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Ampere"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="CapacitanceUnit">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Farad"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="InductanceUnit">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Henry"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="PowerUnit">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Watts"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="FrequencyUnit">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Hertz"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="ConductanceUnit">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Siemen"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="EnergyUnit">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="The Watt-Hour"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="DoideType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="PINDiode"/>
+      <xs:enumeration value="PhotoDiode"/>
+      <xs:enumeration value="TunnelDiode"/>
+      <xs:enumeration value="SchottyDiode"/>
+      <xs:enumeration value="ConstatntCurrentDiode"/>
+      <xs:enumeration value="VaractorDiode"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>

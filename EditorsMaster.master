@@ -1,0 +1,68 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="EditorsMaster.master.cs" Inherits="EditorsMaster" %>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Master</title>
+    <%--<link rel="stylesheet" href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">--%>
+  <script src="js/jquery-1.10.2.js"></script>
+    <script src="js/jquery-ui.js"></script>
+      <link rel="stylesheet" href="css/jquery-ui.css"/>
+ <%-- <script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>--%>
+    <%--<script src="js/jquery-1.8.2.min.js"></script>--%>
+      <script src="js/svg.js"></script>
+     <script src="js/svg.draggable.js"></script>
+    <script src="js/CMLJS.js"></script>
+    <link href="js/jquery.contextMenu.css" rel="stylesheet" />
+    <script src="js/jquery.contextMenu.js"></script>
+    <%-- <link rel="stylesheet" href="/resources/demos/style.css">--%>
+
+ <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="css/style-editor.css" rel="stylesheet" type="text/css" media="all" />
+<link href='http://fonts.googleapis.com/css?family=Lato:400,300,600,700,800' rel='stylesheet' type='text/css'>
+<%--<script src="js/jquery.min.js"></script>--%>
+<link rel="stylesheet" type="text/css" href="css/lightbox.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+   <%-- <script src="jquery-1.10.2.js"></script>--%>
+    <%--<link href="jquery-ui.css" rel="stylesheet" />--%>
+   <%-- <script src="jquery-ui.js"></script>--%>
+    <style type="text/css">
+        .auto-style1 {
+            height: 64px;
+        }
+    </style>
+</head>
+<body style="overflow:hidden;">
+    <form id="Form1" runat="server" >
+         <asp:ScriptManager ID="ScriptManager2" runat="server"></asp:ScriptManager>
+          <input id="Hidden1" runat="server" type="hidden" value="" />
+<div class="wrap" > 
+	<div class="pages-top_master">
+        <div class="header-top_master">
+        
+             <a href="HomePage.aspx"><img src="images/Home Logo.png"  class="home"/></a>
+	        <div class="logo_master ">
+				<a href="HomePage.aspx"><img src="images/best.png"  alt=""/></a>
+			 </div>	
+		</div><!-- end header_main4 -->
+ </div>
+   </div>
+	    <%--<div class="main">--%>
+            <asp:ContentPlaceHolder ID="EditorContent" runat="server">
+            
+            </asp:ContentPlaceHolder>
+        <%--</div>--%>
+		<div class="footer-bottom_master"> 
+	     	  	<div class="copy_master">
+				   <p>© All Rights reserved to Cicuit</p>
+			    </div>	 
+       </div>
+       
+     
+</form>
+
+
+
+</body> 
+</html>
